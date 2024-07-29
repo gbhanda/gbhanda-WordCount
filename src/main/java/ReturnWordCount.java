@@ -5,6 +5,18 @@ public class ReturnWordCount {
      * @return return the amount of words in a string.
      */
     public int count(String in){
-        return 0;
+        boolean wordFlag = false;
+        int wordCount = 0;
+        for(int i = 0; i < in.length(); i++){
+            if(in.charAt(i) != ' '){
+                wordFlag = true;
+            }
+            else{
+                wordFlag = false;
+            }
+            if(i == in.length()- 1 && in.charAt(i) != ' ') wordCount++;
+            if (wordFlag == false) wordCount++;
+        }
+        return wordCount;
     }
 }
